@@ -1,0 +1,18 @@
+param NUMSCEN := 1;
+
+param prob := 1.0;
+
+param pI := 2;
+
+param pT := 49;
+
+param pT_ex := 100;
+
+param ps := 2;
+
+param pR := 51;
+
+param pd := 5;
+
+param iter := 99;
+
