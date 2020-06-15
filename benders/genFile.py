@@ -10,14 +10,16 @@
 #	1. PR cost. See function pCPR_init(). Change code directly for a differnt PR cost: pCPR.append(1).
 #	2. CR cost. See function pCCR_init(). Change code directly for a different CR cost: temp = random.uniform(6,16), where 6 is the lower
 #				bound and 16 is the upper bound for a uniform distribution.
-#	3. kesi.	See function pKesi_init(). It denotes the initial failure state of a component, 1 is failed and 0 otherwise. 
+#	3. setup cost.	Denoted by d
+#	4. kesi.	See function pKesi_init(). It denotes the initial failure state of a component, 1 is failed and 0 otherwise. 
 #				Current code means only the first component is failed. Please change the code in this function directly for a different kesi.
-#	4. Weibull shape. See function w_shape_init(). Please change the lower bound (4) and the upper bound (7) in code "temp = random.uniform(4,7)"
+#	5. Weibull shape. See function w_shape_init(). Please change the lower bound (4) and the upper bound (7) in code "temp = random.uniform(4,7)"
 #				directly for different parameter settings.
-#	5. Weibull scale. See function w_scale_init(). Please change the lower bound (1) and the upper bound (8) in code "temp = random.uniform(1,8)"
+#	6. Weibull scale. See function w_scale_init(). Please change the lower bound (1) and the upper bound (8) in code "temp = random.uniform(1,8)"
 #				directly for different parameter settings.
-#	6. Initial first stage solution. See function x_init(). Please change the numbers in the function for different parameter settings.
-#	7. The random lifetime seed control is "random.seed(i-1+r-1+idx_w)". Not recommend to change it.
+#	7. Initial first stage solution. See function x_init(). Please change the numbers in the function for different parameter settings.
+#	
+#	8. The random lifetime seed control is "random.seed(i-1+r-1+idx_w)". Not recommend to change it.
 
 
 def w_shape_init(w_shape):

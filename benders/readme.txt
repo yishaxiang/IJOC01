@@ -30,11 +30,12 @@ Important Inputs:
 2. See file genFile.py for
 	2.1 PR cost. 
 	2.2 CR cost.
-	2.3 kesi. Initial failure states
-	2.4 Weibull shape parameters. 
-	2.5 Weibull scale parameters. 
-	2.6 Initial first stage solution.
-	2.7. The random lifetime seed control 
+	2.3 Setup cost.
+	2.4 kesi. Initial failure states
+	2.5 Weibull shape parameters. 
+	2.6 Weibull scale parameters. 
+	2.7 Initial first stage solution.
+	2.8. The random lifetime seed control 
 	
 Notice:
 =======
