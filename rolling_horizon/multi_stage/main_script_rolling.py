@@ -4,8 +4,21 @@
 #Info:
 #script to control other main file for rolling horizion
 #
-#!/usr/bin/python
-
+#Inputs:
+#	1. number of components, nComponents.
+#	2. setup cost, cS.
+#	3. inspection interval, intvl,
+#	4. planning horizon, nStages, {0,1,...,nStages-1}
+# 	5. initial failure states, kesi,
+#	6. initial age, age;
+#	7. PR cost, cPR
+#	8. CR cost, cCR
+#	9. Weibull shape parameter, w_shape
+#	10. Weibull scale parameter, w_scale
+#Outputs(in file main_dynamic_solver.py):
+#	1.CPU time. "print ("calculation time is %f"  %time_elapsed)"
+#	2.Objective value. "print (bestObj0);"
+#	3.Optimal solution	"print (bestSol0);"
 
 import main_dynamic_solver
 

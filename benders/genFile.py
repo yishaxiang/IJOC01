@@ -20,30 +20,7 @@
 #	7. Initial first stage solution. See function x_init(). Please change the numbers in the function for different parameter settings.
 #	
 #	8. The random lifetime seed control is "random.seed(i-1+r-1+idx_w)". Not recommend to change it.
-
-
-def w_shape_init(w_shape):
-	global I
-	for i in range(0, I):
-		random.seed(i*20) ###control the seed     
-		temp = random.uniform(4,7)
-		w_shape.append(round(temp,1))
-#weibull scale parameter: w_scale[i]=i, i=1...I
-#u(1,8)
-def w_scale_init(w_scale):
-	global I
-	for i in range(0, I):
-		random.seed(i*10) ###control the seed     
-		temp = random.uniform(1,8)
-		w_scale.append(round(temp,1))
-def x_init(x):
-	global I
-	for i in range(0, I):
-		idx = i + 1
-		temp = 0
-		if idx == 1: #or idx == 2 or idx == 3:
-			temp = 1
-		x.append(temp)
+#	9. Inital age. 	s in function  create_allFiles()
 
 
 import os

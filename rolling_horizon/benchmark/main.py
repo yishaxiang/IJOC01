@@ -1,10 +1,25 @@
 #Author: Zhicheng Zhu
-#Email: zzhicheng.zhu@ttu.edu
+#Email: zhicheng.zhu@ttu.edu
 #Benchmark policy for rolling horizon comparison
 #paper:
 #A dynamic policy for grouping maintenance activities
 #EJOR 1997, Wildeman et al.
 
+#Input:
+#	1. number of components, I
+#	2. Planning horizon, T, {0,1,...,T-1}
+#	3. Setup cost, d
+#	4. Weibull scale bounds, wScaleVector
+#	5. CR cost bounds, cCrVector
+#	6. Weibull shape bound, "sysParams.set_wShapeBound([1,3])"
+#	7. PR cost bound, "sysParams.set_cPrBound([1,1])"
+#	8. Random seed control, "sysParams.set_ranSeed(ranSeed)"
+#Output:
+#	1. CPU time, "print ("time             = %d" %time_)"
+#	2. Cost of all replicates,"print ("cost"), print (cost)",
+#	3. Average cost,"print ("average cost"), print (float(sum(cost))/len(cost))"
+#	4. Cost variance, "print ("variance", np.var(cost));"
+			
 
 import class_info as myClass
 import time

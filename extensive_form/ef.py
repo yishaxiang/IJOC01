@@ -1,9 +1,16 @@
 #  Author: Zhicheng Zhu
-#  Email: zhicheng.zhu@ttu.edu
+#  Email: zhicheng.zhu@ttu.edu, yisha.xiang@ttu.edu
 
-#  Implemention of extensive form. Whole problem.
-#
-#
+#Implemention of extensive form. Whole problem.
+#Input: 
+#	1. PR cost: See function pCPR_init(). Currently all PR costs are 1.
+#	2. CR cost: See function pCCR_init(). Currently CR cost follows a uniform distribution with lower bound = 6 and upper bound = 16.
+#	3. Kesi. The initial failure state. See function pKesi_init(). Currently only the first component is failed.
+#	4. Weibull shape parameters. See function w_shape_init(). Currently it follows a uniform distribution with 
+#		lower bound = 4 and upper bound = 7.
+#	5. Weibull scale parameters. See function w_scale_init(). Currently it follows a uniform distribution with 
+#		lower bound = 1 and upper bound = 8.	
+
 
 from pyomo.core import *
 import math

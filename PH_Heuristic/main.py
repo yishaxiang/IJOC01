@@ -1,7 +1,26 @@
 #Author: Zhicheng Zhu
 #Email: zhicheng.zhu@ttu.edu
 
-#search "input" for input variables.
+#Inputs:
+#	1. number of components. nComponents.
+#	2. planning horizon. nStages, T, {0,1,...,T-1}
+#	3. number of scenarios. nScenarios,
+#	4. extended planning horizon.T_ex
+#	5. initial age, age
+#	6. setup cost,dVector, setUpCost 
+#	7. inspection interval, intvl.
+#	8. PR cost, cPR;
+#	9. CR cost bounds, cCrVector=[lower_bound, upper_bound]
+#	10. Heuristic algorithm inputs, \Delta: t1_v , \iota: t2_v 
+#	11. Weibull shape parameter, w_shape;
+#	12. Weibull scale parameter bounds, wScaleVector=[lower_bound, upper_bound]
+#	13. Lifetime random seed control, ranSeed
+#	14. Initial failure states, kesi
+#	15. PHA inputs, rho, eps, maximum iteration:max_iter
+#Outputs:
+#	1. Convergence itertaion, "print ("converge at iter_ = %d" %iter_)"
+#	2. Objective values, "print ("cost") ,print (cost),print ("average cost"),print (float(sum(cost))/len(cost))"
+#	3. CPU time, "print ("time             = %d" %time_)"
 
 import os
 import math

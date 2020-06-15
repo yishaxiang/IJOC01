@@ -8,7 +8,22 @@
 # 3. ScenNode1.dat - ScenNodew.dat, where w is the number of scenarios.
 #	 These files contain the scenario specific data, which is the random life times
 #
-#
+#Inputs:
+#	1. directory, the folder path of this file.
+#	2. number of components. comp_list.
+#	3. planning horizon. time_list, T {0,1,...,T}
+#	4. number of scenarios. scen_list,
+#	5. extended planning horizon.T_ex
+#	6. initial age, s
+#	7. setup cost,d 
+#	8. PR cost, see function pCPR_init();
+#	9. CR cost, see function pCCR_init();
+#	10. Weibull shape parameter, see function w_shape_init();
+#	11. Weibull scale parameter, see function w_scale_init();
+#	12. Lifetime random seed control.
+#	13. Initial failure states, kesi, see function pKesi_init();
+
+
 import os
 import math
 import random

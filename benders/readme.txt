@@ -22,7 +22,7 @@ subproblem implementation in ./sub.py.
 	Read-only data file for each scenario. Named as ScenNode[x].dat, where [x] is the scenario index, starts from 1.
 
 Important Inputs:
-=======
+=================
 1. See file main.py for
 	1.1 number of components
 	1.2 planning horizon. 
@@ -35,7 +35,8 @@ Important Inputs:
 	2.5 Weibull shape parameters. 
 	2.6 Weibull scale parameters. 
 	2.7 Initial first stage solution.
-	2.8. The random lifetime seed control 
+	2.8 The random lifetime seed control 
+	2.9 Initial age
 	
 Notice:
 =======

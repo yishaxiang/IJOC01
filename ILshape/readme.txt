@@ -2,7 +2,7 @@ This code is to implement integer L-shape method to solve stochastic grouping pr
 Which is the Algorithm 2 in the paper
 
 Code author: Zhicheng Zhu
-Email: zhicheng.zhu@ttu.edu
+Email: zhicheng.zhu@ttu.edu, yisha.xiang@ttu.edu
 
 Code structure:
 ===============
@@ -18,6 +18,23 @@ Code structure:
 ./sub.py (subIP.py):
 --------------------
 	relaxation (integer) version of sub-problem implementation.
+
+Important Inputs:
+=================
+a. See file main_single.py for
+	1. number of components
+	2. planning horizon
+	3. number of scenarios
+	4. setup cost
+b. See file fenFile.py for
+	1. Extended planning horizon T_ex;
+	2. Initial ag
+ 	3. PR cost.
+	4. CR cost: See function pCCR_init(). 5. Kesi. The initial failure state. 
+	6. Weibull shape parameters. 
+	7. Weibull scale parameters. 
+	8. Initial first stage solution.
+	9. Lifetime random seed control.
 
 Notice:
 =======

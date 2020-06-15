@@ -19,7 +19,17 @@ Code structure:
 	3. component_running: component running information. Dynamically changing in program
 	4. system_running: system running information. Dynamically changing in program
 
-	
+Important Inputs:
+=================
+See file main.py for
+	1. number of components
+	2. Planning horizon.
+	3. Setup cost.
+	4. Weibull scale bounds.
+	5. CR cost bounds.
+	6. Weibull shape bound.
+	7. PR cost bound.
+	8. Random seed control.
 
 Notice:
 =======

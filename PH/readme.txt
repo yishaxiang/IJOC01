@@ -26,6 +26,23 @@ Code structure:
 	create files in ./nodedata/ .
 	call runph script.
 
+Important Inputs:
+=================
+See file main.py for
+	1. number of components.
+	2. planning horizon.
+	3. number of scenarios.
+	4. extended planning horizon.
+	5. initial age.
+	6. setup cost.
+	7. PR cost.
+	8. CR cost.
+	9. Weibull shape parameter.
+	10. Weibull scale parameter.
+	11. Lifetime random seed control.
+	12. Initial failure states, kesi.
+
+
 Notice:
 =======
 1. runph script from Pyomo/PySP package is used for solving standard progressive hedging problem.

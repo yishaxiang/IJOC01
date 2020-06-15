@@ -8,9 +8,17 @@
 #	2.2 user cuts: when solution is not integer feasible. Benders cut only
 #3. Best incumbent solution until no cuts can be found in 2.
 #
-#Last Update: 03/21/2018
-#
-#!/usr/bin/python
+#Input:
+#	1.number of components: comp_list;
+#	2. planning horizon: time_list, T, {0,1,...,T}
+#	3. number of scenarios, scen_list
+#	4. setup cost, d
+#	5. directory. The folder path of this file
+#Output:
+#	1. Optimal solution, "print("Solution: ", solution.get_values())"
+#	2. CPU time, "print ("time = ")"
+#	3. number of lazy cuts. "print ("lazy cut")",
+#	4. number of user cuts. "print (user_cut)"
 
 from __future__ import print_function
 
@@ -415,7 +423,7 @@ def benders_main(I_in,w_in,d_in,PR_cost,CR_cost,kesi):
         """
 
 def usage():
-	print("Usage:     don't use it!!")
+	print("Usage: ")
 
 #############################################################	
 comp_list = [3]
@@ -423,7 +431,7 @@ time_list = [7]#[10,20,30]
 scen_list = [910]#[20,50,100]
 d = 5 #setup cost
 counter = 0
-directory = "C:\\Users\\Yisha\\Desktop\\ZZC\\ILshape" 
+directory = "path of this file's folder" 
 for I in comp_list:
 	for T in time_list:
 		for w in scen_list:

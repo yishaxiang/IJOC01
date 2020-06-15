@@ -2,6 +2,30 @@
 #Email: zhicheng.zhu@ttu.edu
 #Rolling horizon version of Algorithm 4: PH_Heuristic.
 
+#Inputs:
+#	1. number of components. nComponents.
+#	2. planning horizon. nStages, T, {0,1,...,T-1}
+#	3. number of scenarios. nScenarios,
+#	4. number of replicates, rep.
+#	5. extended planning horizon.T_ex
+#	6. initial age, age
+#	7. setup cost,dVector, setUpCost 
+#	8. inspection interval, intvl.
+#	9. PR cost, cPR;
+#	10. CR cost bounds, cCrVector=[lower_bound, upper_bound]
+#	11. Weibull shape parameter bounds, wShape=[lower_bound, upper_bound];
+#	12. Weibull scale parameter bounds, wScaleVector=[lower_bound, upper_bound]
+#	13. Lifetime random seed control, ranSeed
+#	14. Failure random see control in rolling horizon, 	"random.seed(ranSeed + t*100 + i)"
+#	15. Initial failure states, kesi
+#	16. PHA inputs, rho, eps, maximum iteration:max_iter
+#	17. Heuristic algorithm inputs, \Delta: t1_v , \iota: t2_v 
+#Outputs:
+#	1. Convergence itertaion, "print ("converge at iter_ = %d" %iter_)"
+#	2. Objective values, "print ("cost") ,print (cost),print ("average cost"),print (float(sum(cost))/len(cost))"
+#	3. CPU time, "print ("time             = %d" %time_)"
+#	4. Variance over replicates 	"print ("variance,", np.var(cost))"
+
 
 import os
 import math
@@ -425,8 +449,8 @@ for wScale in wScaleVector:
 			counter1 = 0
 			cost = []
 			start_time = time.clock()
-			aaa = 100;
-			for resLifeSeed in range(aaa-2,aaa):
+			rep = 100;
+			for resLifeSeed in range(rep-2,rep):
 				#counter1 += 1
 				ranSeed = resLifeSeed+counter1;
 				#

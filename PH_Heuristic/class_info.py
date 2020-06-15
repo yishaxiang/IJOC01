@@ -1,3 +1,5 @@
+#random see control, random.seed(self.idx+idx_w+ranSeed); ###control the seed  				
+
 
 import math
 import random

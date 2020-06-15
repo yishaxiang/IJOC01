@@ -4,9 +4,20 @@
 # For files generation Algorithm 2
 # Files generated:
 # ScenNodex.dat: subproblem x data file
+#Input:
+#	1. Extended planning horizon T_ex;
+#	2. Initial age, s;
+# 	3. PR cost: See function pCPR_init(). Currently all PR costs are 1.
+#	4. CR cost: See function pCCR_init(). Currently CR cost follows a uniform distribution with lower bound = 6 and upper bound = 16.
+#	5. Kesi. The initial failure state. See function pKesi_init(). Currently only the first component is failed.
+#	6. Weibull shape parameters. See function w_shape_init(). Currently it follows a uniform distribution with 
+#		lower bound = 4 and upper bound = 7.
+#	7. Weibull scale parameters. See function w_scale_init(). Currently it follows a uniform distribution with 
+#		lower bound = 1 and upper bound = 8.	
+#	8. Initial first stage solution, see function x_init().
+#	9. Lifetime random seed control, "random.seed(i-1+r-1+idx_w)"
 
 
-#
 import os
 import math
 import random

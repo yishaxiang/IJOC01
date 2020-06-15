@@ -5,6 +5,21 @@
 #Cordinated condition-based repair strategies for components 
 #multi-component maintenance system with discounts
 #EJOR 1997, Wijnmalen et al.
+#
+#Input:
+#	1. number of components, numCom;
+#	2. planning horizon, T, {0,1,...,T}.
+#	3. Weibull shape, wShape,
+#	4. Weibull scale, wScale
+#	5. Setup cost, sysCs
+#	6. CR cost, cCr
+#	7. number of replicates, replicates
+#	8. PR cost, cPr.
+#	9. Component failure seed control, "random.seed(rep+t*100+i);"
+#Output:
+#	1. Cost of each replicate, "print("costAll", costAll);"
+#	2. Mean of cost,  "print("mean", np.mean(costAll))"
+#	3. Variance of cost, "print("variance", np.var(costAll))"
 
 
 import class_info as myClass
@@ -40,7 +55,7 @@ wShape = wShapeLow;#wShapeHigh, wShapeLow,	#input: weibull shape
 wScale = wScaleLow;#wScaleHigh, wScaleLow	#input: weibull scale
 sysCs = sysCsHigh;#sysCsHigh, sysCsLow		#input setup cost
 cCr = cCrLow;#cCrHigh,cCrLow				#CR cost
-aaaa = 100;
+replicates = 100;
 #overall system parameters
 numCom = 8;					#input: types of components
 csLevel = 2;				#input: setup cost level. Don't change it!
@@ -126,7 +141,7 @@ sysInfo.print_data();
 
 T = 20;
 costAll = [];
-for rep in range(aaaa,aaaa+5):
+for rep in range(replicates,replicates+5):
 	age = [0]*sysInfo.I;
 	failProb = [0]*sysInfo.I;
 	cost = 0;

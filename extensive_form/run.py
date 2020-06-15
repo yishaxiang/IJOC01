@@ -1,16 +1,27 @@
 # Author Zhicheng Zhu
-# Email: zzhu3@lamar.edu
+# Email: zhicheng.zhu@ttu.edu, yisha.xiang@ttu.edu
 
 # solve extensive form model using Pyomo
 # 
-# Structure:
-# run.py: main script file
-# ef.py:  extensive form model
-# ef.dat: extensive form data.
+#Input(in function create_files()):
+#	1. file_name: put the full path of ef.dat here.
+#	2. number of componetns. I;
+#	3. planning horizon, T, {0,1,...,T}
+#	4. Extensive planning horizon T_ex, we can just set it to T*2.
+#	5. setup cost, d.
+#	6. initial age. see code "f.write("param ps := " + str(2)+";\n\n")", here means current ages for all components are 2.
+#	7. max_iteration (outside function create_files()). Set this variable to run multiple test cases with different parameter settings. 
+#		Usually set this to 1.
+#	8. number of scenario.  W (not in function create_files()).
+#Output:
+#	1. Optimal solution for each iteration (experiment), 	"print("x["+str(i)+"]="+str(round(ef_insts[0].x[i](), 4)))"
+#	2. Optimal objective value for each iteration (experiment), "print ("objective value=%f" %ef_insts[0].objCost())"
+#	3. Average CPU time for all iteration, "print ("avg time=%d" %((end_time1 - start_time1)/100.0));"
+#	4. Average objective values "print ("average cost"); print (np.average(cost))"
+#	5. Objective values for all itertaions "print ("cost", cost)". 
 
-#
-#Last Update: 03/21/2018
-#
+
+
 from pyutilib.misc import import_file
 from pyomo.environ import *
 from pyomo.opt import SolverFactory
@@ -22,7 +33,7 @@ import numpy as np
 
 def create_files(iter,W):
 
-	file_name = "path of this file\\ef.dat"	#./ef.dat path
+	file_name = "path of this file\\ef.dat"	#input: ./ef.dat path
 	f = open(file_name,"w")
 
 
@@ -53,11 +64,12 @@ def create_files(iter,W):
 
 cost = [];
 start_time1 = time.clock()
+max_iteration = 1;				#input: it is used for a seed control purpose, or run instances with different sets of lifetimes.
 
-for iter in range(100):
+for iter in range(max_iteration):
 	print ("================")
 	print ("iter="+str(iter));
-	W = 1;
+	W = 1;						#input: number of scenarios.
 	create_files(iter,W);
 	
 	# initialize the instances.
