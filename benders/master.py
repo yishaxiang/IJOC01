@@ -1,9 +1,8 @@
 #  Author: Zhicheng Zhu
-#  Email: zzhu3@lamar.edu
+#  Email: zhicheng.zhu@ttu.edu, yisha.xiang@ttu.edu
 
 # Master Problem
 ##
-#Last Update: 03/21/2018
 #
 
 from pyomo.core import *

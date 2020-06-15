@@ -1,10 +1,24 @@
 #Author: Zhicheng Zhu
-#zhicheng.zhu@ttu.edu
+#Email: zhicheng.zhu@ttu.edu, yisha.xiang@ttu.edu
 #
 #Description:
 #  main file script for basic Benders decomposition using Pyomo.
 #
-#
+###input:
+#	1. comp_list: it is a list of the numbers of components we need to conduct the experiment.
+#				for example, if we need to conduct an expriment with n=4, then we only need to put 4 in it.
+#				The list structure allows us to run multiple experiments in batches.
+#	2. time_list: planning horizon list. For each T in the list, the planning horizon is {0,1,...,T}.
+#	3. scen_list: the list of number of scenarios.
+#	4. directory: the folder path of this file. For example, C:\\Users\\JohnDoe\\Desktop\\code\\benders
+#	5. max_iterations: maximum number of iterations allowed for Benders decomposition.
+###output:
+#	1. number of converge iterations.
+#	2. CPU time
+#	3. number of cuts used
+#	4. objective value of the master problem.
+#	5. objective values of each scenario subproblem.
+
 
 from pyutilib.misc import import_file
 from pyomo.environ import *
@@ -56,7 +70,7 @@ for I in comp_list:
 			for i in mstr_inst.Scen:
 				mstr_inst.sita[i] = float("-Inf")
 
-			max_iterations = 50
+			max_iterations = 50;			#input: the maximum number of iterations allowed.
 			#indicate each subproblem cut converged or not
 			cut_num = 0
 
@@ -160,7 +174,7 @@ for I in comp_list:
 			print ("CPU time="),
 			print (CPU_time)
 			print ("cut="),			
-			print (cut_num)														#output number of cuts. We may also 
+			print (cut_num)														#output number of cuts.
 			for i in mstr_inst.sI:
 				print("x["+str(i)+"]="+str(round(mstr_inst.x[i](), 4)))
 			print ("objective value=%f" %mstr_inst.oMaster())					#output: objective values

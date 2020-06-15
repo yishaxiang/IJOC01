@@ -1,4 +1,4 @@
-Basic benders decomposition to the two-stage model (model 2).
+Basic benders decomposition to the two-stage model (algorithm 1 for model 2).
 
 Code structure:
 ===============
@@ -6,10 +6,12 @@ Code structure:
 -----------------
 	Program starts from this file. It first calls ./genFile.py to generate the data files needed to ./data . It then 
 implement the Benders decomposition, which is relied on the files in ./data, master problem implementation in ./master.py and 
-subproblem implementation in ./sub.py
+subproblem implementation in ./sub.py. 
+	We only need to change the input in this file for different experiments. The detail input and output information can be found inside the file.
 ./genFile.py:
 -------------
 	generate scenario-specific data file in ./data
+	It contains the random lifetime seed control. Not recommend to change it.
 ./sub.py:
 --------------------
 	sub-problem implementation. The subproblem is LP-relaxed.

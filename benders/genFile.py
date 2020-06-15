@@ -1,12 +1,14 @@
 # Author Zhicheng Zhu
-# Email: zhicheng.zhu@ttu.edu
+# Email: zhicheng.zhu@ttu.edu, yisha.xiang@ttu.edu
 
 # For files generation for Algorithm 1 or Algorithm 2
 # Files generated
 # 1. master.dat: generate master.dat file
 # 2. ScenNodex.dat: subproblem x data file
 #
-#
+#Important notes:
+#	The random lifetime seed control is "random.seed(i-1+r-1+idx_w)". Not recommend to change it.
+
 
 import os
 import math
